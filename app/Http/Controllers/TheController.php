@@ -17,5 +17,4 @@ class TheController extends Controller
             'projects'=> $projects
         ]);
     }
-
 }

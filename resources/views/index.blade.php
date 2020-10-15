@@ -7,10 +7,10 @@
             <div class="col-md-6">
                 <h1>Rubar Kurt</h1>
                 <div class="page-scroll">
-                    <p class="job-title">Software Developer</p>
+                    <p class="job-title">Software/Web Developer</p>
                     <a href="#contact" class="btn btn-fill ">Contact</a>
                     <div class="clearfix visible-xxs"></div>
-                    <a href="#portfolio" class="btn btn-border">Explore more</a>
+                    <a href="https://github.com/payhez" class="btn btn-border">GitHub</a>
                 </div>
             </div>
         
@@ -29,8 +29,8 @@
                 <div class="col-md-6 col-md-offset-3">
                     <h2>About</h2>
                     <img src="assets/img/lines.svg" class="img-lines" alt="lines">
-                    <p>Hello! I'm Alex, a full stuck developer, a Ruby enthusiast, and a guy slighty obsessed for code quality. Also I'm a co-founder of pykod.com. I’m currently available for freelance work. If you have a project that you want to get started or think you need my help with something, then get in touch.</p>
-                    <a href="http://www.grad.illinois.edu/sites/default/files/pdfs/cvsamples.pdf" class="btn btn-fill" target="_blank" download>Download my cv</a>
+                    <p>Hello There! I'm Rubar, a Web Developer, a PHP enthusiast, and a guy slighty obsessed for open source :). I’m currently available for freelance work. If you have a project that you want to get started or think you need my help with something, then get in touch.</p>
+                    <a href="https://drive.google.com/file/d/1RbxUOp7TGXChyf_dAj_WJ_VRGwV08UTK/view" class="btn btn-fill" target="_blank" download>Download my cv</a>
                 </div>
             </div>
         </div>
@@ -78,14 +78,14 @@
                     <div class="service">
                         <img src="assets/img/front-end.svg" alt="Front End Developer">
                         <h4>Front-end</h4>
-                        <p>As a javascript developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript MVC frameworks such as angular</p>
+                        <p>As a Web Developer, I have experience in HTML5 and CSS3 techniques working with jQuery or more advanced javascript MVC frameworks such as React</p>
                     </div><!-- /.service -->
                 </div>
                 <div class="col-sm-4">
                     <div class="service">
                         <img src="assets/img/back-end.svg" alt="Back End Developer">
                         <h4>Back-end</h4>
-                        <p>Utilising php frameworks such as Zend or creating bespoke code, I've written services supporting thousands of users, including REST APIs, e-learning applications and more.</p>
+                        <p>Utilising php frameworks such as Laravel or creating bespoke code, I've written services supporting thousands of users, including REST APIs, e-learning applications and more.</p>
                     </div><!-- /.service -->
                 </div>
                 <div class="col-sm-4">
