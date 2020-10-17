@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'TheController@index');
-Route::get('/admin', 'formController@index');
+Route::post('/', 'TheController@mail');
+Route::get('/admpayhez','TheController@create');
+Route::post('/admpayhez','TheController@store');
+
 
 Auth::routes();
 

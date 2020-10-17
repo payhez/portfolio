@@ -3,7 +3,6 @@
 <div id="hero" class="hero">
     <div class="container">
         <div class="row">
-
             <div class="col-md-6">
                 <h1>Rubar Kurt</h1>
                 <div class="page-scroll">
@@ -106,66 +105,19 @@
                 <img src="assets/img/lines.svg" class="img-lines" alt="lines">
             </div>
             <div class="row">
+
+                @foreach($projects as $project)
                 <div class="col-md-4 col-xs-6">
                     <div class="portfolio-item">
-                        <img src="assets/img/portfolio-1.jpg" class="img-res" alt="">
+                        <img src="{{$project['picpath']}}" class="img-res" alt="">
                         <div class="portfolio-item-info">
-                            <h4>Project Title</h4>
-                            <a href="#" data-toggle="modal" data-target="#portfolioItem1"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-link"></span></a>
+                            <h4>{{$project['name']}}</h4>
+                            <a href="#" data-toggle="modal" data-target="#{{$project['id']}}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                            <a href="{{$project['link']}}"><span class="glyphicon glyphicon-link"></span></a>
                         </div><!-- /.portfolio-item-info -->
                     </div><!-- /.portfolio-item -->
                 </div>
-                <div class="col-md-4 col-xs-6">
-                    <div class="portfolio-item">
-                        <img src="assets/img/portfolio-2.jpg" class="img-res" alt="">
-                        <div class="portfolio-item-info">
-                            <h4>Project Title</h4>
-                            <a href="#" data-toggle="modal" data-target="#portfolioItem2"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-link"></span></a>
-                        </div><!-- /.portfolio-item-info -->
-                    </div><!-- /.portfolio-item -->
-                </div>
-                <div class="col-md-4 col-xs-6">
-                    <div class="portfolio-item">
-                        <img src="assets/img/portfolio-3.jpg" class="img-res" alt="">
-                        <div class="portfolio-item-info">
-                            <h4>Project Title</h4>
-                            <a href="#" data-toggle="modal" data-target="#portfolioItem3"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-link"></span></a>
-                        </div><!-- /.portfolio-item-info -->
-                    </div><!-- /.portfolio-item -->
-                </div>
-                <div class="col-md-4 col-xs-6">
-                    <div class="portfolio-item">
-                        <img src="assets/img/portfolio-4.jpg" class="img-res" alt="">
-                        <div class="portfolio-item-info">
-                            <h4>Project Title</h4>
-                            <a href="#" data-toggle="modal" data-target="#portfolioItem4"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-link"></span></a>
-                        </div><!-- /.portfolio-item-info -->
-                    </div><!-- /.portfolio-item -->
-                </div>
-                <div class="col-md-4 col-xs-6">
-                    <div class="portfolio-item">
-                        <img src="assets/img/portfolio-5.jpg" class="img-res" alt="">
-                        <div class="portfolio-item-info">
-                            <h4>Project Title</h4>
-                            <a href="#" data-toggle="modal" data-target="#portfolioItem5"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-link"></span></a>
-                        </div><!-- /.portfolio-item-info -->
-                    </div><!-- /.portfolio-item -->
-                </div>
-                <div class="col-md-4 col-xs-6">
-                    <div class="portfolio-item">
-                        <img src="assets/img/portfolio-6.jpg" class="img-res" alt="">
-                        <div class="portfolio-item-info">
-                            <h4>Project Title</h4>
-                            <a href="#" data-toggle="modal" data-target="#portfolioItem6"><span class="glyphicon glyphicon-eye-open"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-link"></span></a>
-                        </div><!-- /.portfolio-item-info -->
-                    </div><!-- /.portfolio-item -->
-                </div>
+                @endforeach
             </div>
         </div>
     </section><!-- /.secton-portfolio -->
@@ -175,7 +127,7 @@
 
             <h3>Contact</h3>
             <img src="assets/img/lines.svg" class="img-lines" alt="lines">
-            <form>
+            <form action="/" method="POST">
                 <div class="row">
                     <div class="col-sm-6">
                         <input type="text" name="name" class="form-control mt-x-0" placeholder="Name" required>
@@ -187,7 +139,8 @@
                         <textarea name="message" id="mesaage" class="form-control" placeholder="Message" required></textarea>
                     </div>
                 </div>
-                <button href="#" class="btn btn-border" type="submit">Hire Me <span class="glyphicon glyphicon-send"></span></button>
+                @csrf
+                <button  class="btn btn-border" type="submit"> send <span class="glyphicon glyphicon-send"></span></button>
             </form>
         </div>
     </section><!-- /.section-form -->
@@ -198,12 +151,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4 col-xs-12">
-                <a class="icon facebook-bg" href="#"><i class="icon-facebook"></i></a>
-                <a class="icon twitter-bg" href="#"><i class="icon-twitter"></i></a>
-                <a class="icon gplus-bg" href="#"><i class="icon-linkedin"></i></a>
-                <a class="icon linkedin-bg" href="#"><i class="icon-gplus"></i></a>
+                <a class="icon facebook-bg" href="https://www.facebook.com/PaizNoFinger"><i class="icon-facebook"></i></a>
+                <a class="icon linkedin-bg" href="https://www.linkedin.com/in/rubar-kurt-b0387655/"><i class="icon-linkedin"></i></a>
             </div>
-            <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3"><p class="copyright">2017. All Rights Reserved</p></div>
+            <div class="col-sm-4 col-sm-offset-0 col-xs-6 col-xs-offset-3"><p class="copyright">@2020 by Payhez</p></div>
             <div class="col-sm-4 col-xs-3">
                 <div class="text-right page-scroll">
                     <a class="icon icon-up-bg" href="#hero"><i class="icon-up"></i></a>
@@ -214,111 +165,23 @@
 </footer><!-- /#footer -->
 
 <!-- Modals -->
-<div id="portfolioItem1" class="modal fade" role="dialog">
+@foreach($projects as $project)
+<div id="{{$project['id']}}" class="modal fade" role="dialog">
     <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
         <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-        <img class="img-res" src="assets/img/portfolio-1.jpg" alt="">
+        <img class="img-res" src="{{$project['picpath']}}" alt="">
         </div>
         <div class="modal-body">
-        <h4 class="modal-title">Project title</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
+        <h4 class="modal-title">{{$project['name']}}</h4>
+        <p>{{$project['description']}}</p>
         </div>
         <div class="modal-footer">
-        <a href="#" class="btn btn-fill">Visit Page</a>
+        <a href="{{$project['link']}}" class="btn btn-fill">GitHub</a>
         </div>
     </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-<div id="portfolioItem2" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-        <img class="img-res" src="assets/img/portfolio-2.jpg" alt="">
-        </div>
-        <div class="modal-body">
-        <h4 class="modal-title">Project title</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-        </div>
-        <div class="modal-footer">
-        <a href="#" class="btn btn-fill">Visit Page</a>
-        </div>
-    </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="portfolioItem3" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-        <img class="img-res" src="assets/img/portfolio-3.jpg" alt="">
-        </div>
-        <div class="modal-body">
-        <h4 class="modal-title">Project title</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-        </div>
-        <div class="modal-footer">
-        <a href="#" class="btn btn-fill">Visit Page</a>
-        </div>
-    </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="portfolioItem4" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-        <img class="img-res" src="assets/img/portfolio-4.jpg" alt="">
-        </div>
-        <div class="modal-body">
-        <h4 class="modal-title">Project title</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-        </div>
-        <div class="modal-footer">
-        <a href="#" class="btn btn-fill">Visit Page</a>
-        </div>
-    </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="portfolioItem5" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-        <img class="img-res" src="assets/img/portfolio-5.jpg" alt="">
-        </div>
-        <div class="modal-body">
-        <h4 class="modal-title">Project title</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-        </div>
-        <div class="modal-footer">
-        <a href="#" class="btn btn-fill">Visit Page</a>
-        </div>
-    </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="portfolioItem6" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-        <a class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-        <img class="img-res" src="assets/img/portfolio-6.jpg" alt="">
-        </div>
-        <div class="modal-body">
-        <h4 class="modal-title">Project title</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo finibus tristique. Maecenas dignissim condimentum sem eu tincidunt. Curabitur in dui quis magna vestibulum pulvinar a ut urna. Nam pellentesque mattis urna. Aenean eget lectus sit amet turpis facilisis consectetur quis vel ante. Integer in massa ut nibh ultricies sagittis imperdiet in ante. Nam sed turpis vel ante placerat feugiat ac tempus magna. Nam aliquet ullamcorper dolor non hendrerit.</p>
-        </div>
-        <div class="modal-footer">
-        <a href="#" class="btn btn-fill">Visit Page</a>
-        </div>
-    </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+@endforeach
 @endsection

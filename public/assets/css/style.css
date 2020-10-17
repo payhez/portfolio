@@ -370,7 +370,7 @@ html, body {
 }
 
 .section-portfolio .col-md-4:nth-last-child(-n+3) .portfolio-item {
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
 }
 
 .portfolio-item:before {
