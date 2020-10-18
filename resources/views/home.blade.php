@@ -15,8 +15,6 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <p>
-                    <a href="/admin">aa</a></p>
                 </div>
             </div>
         </div>

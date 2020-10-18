@@ -16,9 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'TheController@index');
 Route::post('/', 'TheController@mail');
-Route::get('/admpayhez','TheController@create');
+Route::get('/admpayhez','TheController@create')->middleware('auth');
 Route::post('/admpayhez','TheController@store');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
